@@ -50,7 +50,7 @@ class _VideoInfoState extends State<VideoInfo> {
                   'Legs Toning',
                   style: TextStyle(
                     fontSize: 25,
-                    color: AppColor.homePageContainerTextSmall,
+                    color: AppColor.secondPageTitleColor,
                   ),
                 ),
                 SizedBox(
@@ -60,12 +60,93 @@ class _VideoInfoState extends State<VideoInfo> {
                   'and Glutes Workout',
                   style: TextStyle(
                     fontSize: 25,
-                    color: AppColor.homePageContainerTextSmall,
+                    color: AppColor.secondPageTitleColor,
                   ),
                 ),
+                SizedBox(height: 50,),
+                Row(
+                  children: [
+                    Container(
+                      width: 90,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColor.secondPageContainerGradient1stColor,
+                            AppColor.secondPageContainerGradient2ndColor,
+                          ],
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.timer_outlined,
+                          size: 20,
+                          color: AppColor.secondPageIconColor,),
+                          SizedBox(width: 5,),
+                          Text(
+                            '68 min',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColor.secondPageIconColor,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                    ),
+                    SizedBox(width: 10,),
+                    Container(
+                      width: 230,
+                      height: 30,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        gradient: LinearGradient(
+                          colors: [
+                            AppColor.secondPageContainerGradient1stColor,
+                            AppColor.secondPageContainerGradient2ndColor,
+                          ],
+                          begin: Alignment.bottomLeft,
+                          end: Alignment.topRight,
+                        ),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(Icons.handyman_outlined,
+                            size: 20,
+                            color: AppColor.secondPageIconColor,),
+                          SizedBox(width: 5,),
+                          Text(
+                            'Resistent band, kettebell',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: AppColor.secondPageIconColor,
+                            ),
+                          ),
+                        ],
+                      ),
+
+                    ),
+
+                  ],
+                ),
+
+
               ],
             ),
           ),
+          Expanded(child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(70),
+              ),
+            ),
+          ),),
         ],
       ),
         ));
