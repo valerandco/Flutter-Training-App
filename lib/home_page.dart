@@ -341,7 +341,7 @@ class _HomePageState extends State<HomePage> {
                         borderRadius: BorderRadius.circular(15),
                         image: DecorationImage(
                           image: AssetImage(
-                            info[i]["img"],
+                            info[i+1]["img"],
                           ),
                         ),
                         boxShadow: [
@@ -361,7 +361,7 @@ class _HomePageState extends State<HomePage> {
                         child: Align(
                           alignment: Alignment.bottomCenter,
                           child: Text(
-                            info[i]["title"],
+                            info[i+1]["title"],
                             style: TextStyle(
                               fontSize: 20,
                               color: AppColor.homePageDetail,
