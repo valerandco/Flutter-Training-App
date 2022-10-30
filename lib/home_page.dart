@@ -1,5 +1,7 @@
-import 'dart:convert';
 
+
+import 'dart:convert';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'colors.dart';
 
@@ -11,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   List info=[];
   _initData(){
     DefaultAssetBundle.of(context).loadString('json/info.json').then((value){
@@ -383,7 +386,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
               ),
-            ))
+            ),)
           ],
         ),
       ),
