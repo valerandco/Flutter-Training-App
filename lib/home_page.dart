@@ -190,9 +190,14 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ],
                           ),
-                          child: Icon(
-                            Icons.play_circle_fill,
-                            color: Colors.white, size: 60,
+                          child: InkWell(
+                            onTap: (){
+                              Get.to(()=>VideoInfo());
+                            },
+                            child: Icon(
+                              Icons.play_circle_fill,
+                              color: Colors.white, size: 60,
+                            ),
                           ),
                         ),
                       ],
