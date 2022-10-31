@@ -15,10 +15,10 @@ class VideoInfo extends StatefulWidget {
 
 class _VideoInfoState extends State<VideoInfo> {
 
-  List info=[];
+  List videoInfo=[];
   _initData(){
     DefaultAssetBundle.of(context).loadString('json/videoinfo.json').then((value){
-      info = json.decode(value);
+      videoInfo = json.decode(value);
 
     });
   }
@@ -203,6 +203,26 @@ class _VideoInfoState extends State<VideoInfo> {
                     SizedBox(width: 20,),
                   ],
                 ),
+                Expanded(child: ListView.builder(
+                    itemCount: videoInfo.length,
+                    itemBuilder: (_, int index){
+
+                  return GestureDetector(
+                    onTap: (){
+                      debugPrint(index.toString());
+                    },
+                    child: Container(
+                      height: 135,
+                      color: Colors.redAccent,
+                      width: 200,
+                      child: Column(
+                        children: [
+
+                        ],
+                      ),
+                    ),
+                  );
+                }))
               ],
             ),
           ),),
