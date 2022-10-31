@@ -1,4 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'colors.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -10,6 +14,22 @@ class VideoInfo extends StatefulWidget {
 }
 
 class _VideoInfoState extends State<VideoInfo> {
+
+  List info=[];
+  _initData(){
+    DefaultAssetBundle.of(context).loadString('json/videoinfo.json').then((value){
+      info = json.decode(value);
+
+    });
+  }
+
+  @override
+  void initState(){
+    super.initState();
+    _initData;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +56,14 @@ class _VideoInfoState extends State<VideoInfo> {
               children: [
                 Row(
                   children: [
-                    Icon(Icons.arrow_back_ios, size: 20,
-                    color: AppColor.secondPageIconColor,),
+                    InkWell(
+                      onTap:(){
+                        Get.back();
+                      },
+
+                      child: Icon(Icons.arrow_back_ios, size: 20,
+                      color: AppColor.secondPageIconColor,),
+                    ),
                     Expanded(child: Container()),
                     Icon(Icons.info_outline, size: 20,
                       color: AppColor.secondPageIconColor,),
@@ -160,6 +186,21 @@ class _VideoInfoState extends State<VideoInfo> {
                         color: AppColor.circuitsColor,
                       ),
                     ),
+                    Expanded(child: Container()),
+                    Row(
+                      children: [
+                        Icon(Icons.loop, size: 20, color: AppColor.loopColor),
+                        SizedBox(width: 10,),
+                        Text(
+                          '3 sests',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: AppColor.setsColor,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(width: 20,),
                   ],
                 ),
               ],
