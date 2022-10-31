@@ -146,6 +146,24 @@ class _VideoInfoState extends State<VideoInfo> {
                 topRight: Radius.circular(70),
               ),
             ),
+            child: Column(
+              children: [
+                SizedBox(height: 30,),
+                Row(
+                  children: [
+                    SizedBox(width: 30,),
+                    Text(
+                      'Circuit 1: Legs Toning',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColor.circuitsColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),),
         ],
       ),
